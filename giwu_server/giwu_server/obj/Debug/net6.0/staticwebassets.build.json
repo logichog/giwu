@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Ff8x6BjK5iV1eHGISZ6KfikMvg9gikS+pkv/Qj5PJa0=",
+  "Source": "giwu_server",
+  "BasePath": "_content/giwu_server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
