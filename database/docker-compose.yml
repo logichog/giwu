@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      - MSSQL_SA_PASSWORD=Passw0rd
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    volumes:
+      - /Projects/giwu/database/mssql=/var/opt/mssql/
+      - /Projects/giwu/database/data=/var/opt/sqlserver/data
+      - /Projects/giwu/database/log=/var/opt/sqlserver/log
+      - /Projects/giwu/database/backup=/var/opt/sqlserver/backup

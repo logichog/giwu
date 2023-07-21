@@ -15,9 +15,9 @@ class VerseScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final selections = ref.watch(selectionsProvider);
-_getVerses();
+
     for (var i = 0; i < 50; i++) {
-      _chapterList.add(Verse(num: i + 1,text: uuid.v4()));
+      _chapterList.add(Verse(verse: i + 1,book: 1,chapter: 1,text: uuid.v4()));
     }
 
     final bibleSlug = ref.read(selectionsProvider.notifier).getBibleSlug();
@@ -39,7 +39,7 @@ _getVerses();
             ..._chapterList.map((e) => Column(
                   children: [
                     ListTile(
-                      leading: Text(e.num.toString()),
+                      leading: Text(e.verse.toString()),
                       title: Text(e.text),
                     ),
                     const Divider(height: 0),
