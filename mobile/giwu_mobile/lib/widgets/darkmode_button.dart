@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:giwu_mobile/provider/selections_provider.dart';
 
 class DarkModeButton extends ConsumerWidget {
   const DarkModeButton({super.key});
@@ -25,7 +24,7 @@ class DarkModeButton extends ConsumerWidget {
           );
         },
         child: Icon(
-          dark  ? Icons.dark_mode_outlined : Icons.dark_mode,
+          Icons.dark_mode,
           key: ValueKey(dark),
         ),
       ),

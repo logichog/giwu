@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:giwu_mobile/models/appError.dart';
-import 'package:giwu_mobile/provider/app_provider.dart';
 
 import 'package:giwu_mobile/provider/selections_provider.dart';
 import 'package:giwu_mobile/screens/chapter_screen.dart';
@@ -21,16 +19,6 @@ class BookScreenState extends ConsumerState<BookScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Bible - ${selectionsInfo.version}'),
-        actions: const [
-          DarkModeButton(),
-          SizedBox(
-            width: 10,
-          ),
-          Icon(Icons.menu_book),
-          SizedBox(
-            width: 10,
-          ),
-        ],
       ),
       body: Container(
         width: double.infinity,

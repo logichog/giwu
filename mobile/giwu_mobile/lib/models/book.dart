@@ -1,5 +1,3 @@
-import 'package:giwu_mobile/models/chapter.dart';
-
 class Book {
   Book({
     required this.id,

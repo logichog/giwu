@@ -1,15 +1,7 @@
-import 'dart:convert';
-import 'dart:ffi';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:giwu_mobile/models/AppData.dart';
-import 'package:giwu_mobile/models/BibleVersionKey.dart';
-
 import 'package:giwu_mobile/models/appError.dart';
-import 'package:giwu_mobile/functions/database.dart';
-
-// import 'package:giwu_mobile/data/bibles/bible-sqlite.db' as databaseFile;
-import 'package:http/http.dart' as http;
 
 
 final appDataProvider = StateNotifierProvider<AppDataNotificatifier, AppData>((ref) {
