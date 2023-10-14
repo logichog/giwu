@@ -1,0 +1,343 @@
+{
+    "table": "t_kjv",
+    "abbreviation": "KJV",
+    "language": "english",
+    "version": "King James Version",
+    "infoText": "",
+    "infoUrl": "",
+    "publisher": "",
+    "copyright": "Public Domain",
+    "copyrightInfo": "",
+    "books": [
+        {
+            "id": 1,
+            "name": "Genesis",
+            "chapters": null
+        },
+        {
+            "id": 2,
+            "name": "Exodus",
+            "chapters": null
+        },
+        {
+            "id": 3,
+            "name": "Leviticus",
+            "chapters": null
+        },
+        {
+            "id": 4,
+            "name": "Numbers",
+            "chapters": null
+        },
+        {
+            "id": 5,
+            "name": "Deuteronomy",
+            "chapters": null
+        },
+        {
+            "id": 6,
+            "name": "Joshua",
+            "chapters": null
+        },
+        {
+            "id": 7,
+            "name": "Judges",
+            "chapters": null
+        },
+        {
+            "id": 8,
+            "name": "Ruth",
+            "chapters": null
+        },
+        {
+            "id": 9,
+            "name": "1 Samuel",
+            "chapters": null
+        },
+        {
+            "id": 10,
+            "name": "2 Samuel",
+            "chapters": null
+        },
+        {
+            "id": 11,
+            "name": "1 Kings",
+            "chapters": null
+        },
+        {
+            "id": 12,
+            "name": "2 Kings",
+            "chapters": null
+        },
+        {
+            "id": 13,
+            "name": "1 Chronicles",
+            "chapters": null
+        },
+        {
+            "id": 14,
+            "name": "2 Chronicles",
+            "chapters": null
+        },
+        {
+            "id": 15,
+            "name": "Ezra",
+            "chapters": null
+        },
+        {
+            "id": 16,
+            "name": "Nehemiah",
+            "chapters": null
+        },
+        {
+            "id": 17,
+            "name": "Esther",
+            "chapters": null
+        },
+        {
+            "id": 18,
+            "name": "Job",
+            "chapters": null
+        },
+        {
+            "id": 19,
+            "name": "Psalms",
+            "chapters": null
+        },
+        {
+            "id": 20,
+            "name": "Proverbs",
+            "chapters": null
+        },
+        {
+            "id": 21,
+            "name": "Ecclesiastes",
+            "chapters": null
+        },
+        {
+            "id": 22,
+            "name": "Song of Solomon",
+            "chapters": null
+        },
+        {
+            "id": 23,
+            "name": "Isaiah",
+            "chapters": null
+        },
+        {
+            "id": 24,
+            "name": "Jeremiah",
+            "chapters": null
+        },
+        {
+            "id": 25,
+            "name": "Lamentations",
+            "chapters": null
+        },
+        {
+            "id": 26,
+            "name": "Ezekiel",
+            "chapters": null
+        },
+        {
+            "id": 27,
+            "name": "Daniel",
+            "chapters": null
+        },
+        {
+            "id": 28,
+            "name": "Hosea",
+            "chapters": null
+        },
+        {
+            "id": 29,
+            "name": "Joel",
+            "chapters": null
+        },
+        {
+            "id": 30,
+            "name": "Amos",
+            "chapters": null
+        },
+        {
+            "id": 31,
+            "name": "Obadiah",
+            "chapters": null
+        },
+        {
+            "id": 32,
+            "name": "Jonah",
+            "chapters": null
+        },
+        {
+            "id": 33,
+            "name": "Micah",
+            "chapters": null
+        },
+        {
+            "id": 34,
+            "name": "Nahum",
+            "chapters": null
+        },
+        {
+            "id": 35,
+            "name": "Habakkuk",
+            "chapters": null
+        },
+        {
+            "id": 36,
+            "name": "Zephaniah",
+            "chapters": null
+        },
+        {
+            "id": 37,
+            "name": "Haggai",
+            "chapters": null
+        },
+        {
+            "id": 38,
+            "name": "Zechariah",
+            "chapters": null
+        },
+        {
+            "id": 39,
+            "name": "Malachi",
+            "chapters": null
+        },
+        {
+            "id": 40,
+            "name": "Matthew",
+            "chapters": null
+        },
+        {
+            "id": 41,
+            "name": "Mark",
+            "chapters": null
+        },
+        {
+            "id": 42,
+            "name": "Luke",
+            "chapters": null
+        },
+        {
+            "id": 43,
+            "name": "John",
+            "chapters": null
+        },
+        {
+            "id": 44,
+            "name": "Acts",
+            "chapters": null
+        },
+        {
+            "id": 45,
+            "name": "Romans",
+            "chapters": null
+        },
+        {
+            "id": 46,
+            "name": "1 Corinthians",
+            "chapters": null
+        },
+        {
+            "id": 47,
+            "name": "2 Corinthians",
+            "chapters": null
+        },
+        {
+            "id": 48,
+            "name": "Galatians",
+            "chapters": null
+        },
+        {
+            "id": 49,
+            "name": "Ephesians",
+            "chapters": null
+        },
+        {
+            "id": 50,
+            "name": "Philippians",
+            "chapters": null
+        },
+        {
+            "id": 51,
+            "name": "Colossians",
+            "chapters": null
+        },
+        {
+            "id": 52,
+            "name": "1 Thessalonians",
+            "chapters": null
+        },
+        {
+            "id": 53,
+            "name": "2 Thessalonians",
+            "chapters": null
+        },
+        {
+            "id": 54,
+            "name": "1 Timothy",
+            "chapters": null
+        },
+        {
+            "id": 55,
+            "name": "2 Timothy",
+            "chapters": null
+        },
+        {
+            "id": 56,
+            "name": "Titus",
+            "chapters": null
+        },
+        {
+            "id": 57,
+            "name": "Philemon",
+            "chapters": null
+        },
+        {
+            "id": 58,
+            "name": "Hebrews",
+            "chapters": null
+        },
+        {
+            "id": 59,
+            "name": "James",
+            "chapters": null
+        },
+        {
+            "id": 60,
+            "name": "1 Peter",
+            "chapters": null
+        },
+        {
+            "id": 61,
+            "name": "2 Peter",
+            "chapters": null
+        },
+        {
+            "id": 62,
+            "name": "1 John",
+            "chapters": null
+        },
+        {
+            "id": 63,
+            "name": "2 John",
+            "chapters": null
+        },
+        {
+            "id": 64,
+            "name": "3 John",
+            "chapters": null
+        },
+        {
+            "id": 65,
+            "name": "Jude",
+            "chapters": null
+        },
+        {
+            "id": 66,
+            "name": "Revelation",
+            "chapters": null
+        }
+    ]
+}

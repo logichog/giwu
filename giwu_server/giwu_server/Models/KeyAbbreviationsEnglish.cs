@@ -8,6 +8,6 @@ namespace giwu_server.Models
         public int id { set; get; }
         public string a { set; get; }
         public int b { set; get; }
-        public int p { set; get; }
+        public bool p { set; get; }
     }
 }

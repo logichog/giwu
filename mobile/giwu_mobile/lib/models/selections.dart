@@ -1,8 +1,23 @@
+import 'package:giwu_mobile/models/book.dart';
+
 class Selections {
-  Selections({required this.isDark,required this.bible,required this.book,required this.chapter});
+  Selections({
+    required this.bible,
+    required this.book,
+    required this.chapter,
   
-  bool isDark;
+    required this.abbreviation,
+    required this.language,
+    required this.version,
+    required this.books,
+  });
+  
   String bible;
   int book;
   int chapter;
+  
+  String abbreviation;
+  String language;
+  String version;
+  List<Book> books;
 }

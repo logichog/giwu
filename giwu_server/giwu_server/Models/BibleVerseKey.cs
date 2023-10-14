@@ -5,6 +5,7 @@ namespace giwu_server.Models
     public class BibleVerseKey
     {
         [Key]
+        public int id { set; get; }
         public string table { set; get; }
         public string abbreviation { set; get; }
         public string language { set; get; }

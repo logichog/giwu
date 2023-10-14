@@ -11,7 +11,8 @@ namespace giwu_server.Data
             
         }
         public DbSet<Test> Tests { get; set; }
-        public DbSet<BibleVerseKey> bible_verse_vey { get; set; }
+
+        public DbSet<BibleVerseKey> bible_version_key { get; set; }
         public DbSet<CrossReference> cross_reference { get; set; }
         public DbSet<KeyAbbreviationsEnglish> Key_abbreviations_english { get; set; }
         public DbSet<KeyEnglish> key_english { get; set; }

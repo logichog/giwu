@@ -4,6 +4,7 @@
     {
         public int Id { set; get; }
         public string name { set; get; }
+        public int ChapterCount { set; get; }
         public List<ChapterViewModel> Chapters { set; get; }
     }
 }

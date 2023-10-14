@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:giwu_mobile/data/book_list.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:giwu_mobile/models/appError.dart';
+import 'package:giwu_mobile/provider/app_provider.dart';
+
 import 'package:giwu_mobile/provider/selections_provider.dart';
 import 'package:giwu_mobile/screens/chapter_screen.dart';
 import 'package:giwu_mobile/widgets/darkmode_button.dart';
 
-class BookScreen extends ConsumerWidget {
-  BookScreen({super.key});
-  // List<Book> _bookList = [];
-
-  // List<Book> bookList =
-  void _selectBook(ctx){
-    Navigator.of(ctx).push(
-      MaterialPageRoute(builder: (context) => const ChaperScreen(),),
-    );
-  }
+class BookScreen extends ConsumerStatefulWidget {
+  const BookScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final bibleName = ref.read(selectionsProvider.notifier).getBibleName();
+  BookScreenState createState() => BookScreenState();
+}
 
+class BookScreenState extends ConsumerState<BookScreen> {
+  @override
+  Widget build(BuildContext context) {
+    final selectionsInfo = ref.watch(selectionsProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bible - $bibleName'),
+        title: Text('Bible - ${selectionsInfo.version}'),
         actions: const [
           DarkModeButton(),
-          SizedBox(width: 10,),
+          SizedBox(
+            width: 10,
+          ),
           Icon(Icons.menu_book),
-          SizedBox(width: 10,),
+          SizedBox(
+            width: 10,
+          ),
         ],
       ),
       body: Container(
@@ -35,15 +37,17 @@ class BookScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(12),
         child: ListView(
           children: [
-            ...bookList.map((e) => Column(
+            ...selectionsInfo.books.map((e) => Column(
                   children: [
                     ListTile(
                       title: Text(e.name),
-                      trailing: Text(e.chapters.toString()),
+                      trailing: Text(e.chapter_count.toString()),
                       onTap: () {
                         ref.read(selectionsProvider.notifier).selectBook(e.id);
                         Navigator.of(context).push(
-                          MaterialPageRoute(builder: (ctx) => const ChaperScreen(),),
+                          MaterialPageRoute(
+                            builder: (ctx) => const ChaperScreen(),
+                          ),
                         );
                       },
                     ),

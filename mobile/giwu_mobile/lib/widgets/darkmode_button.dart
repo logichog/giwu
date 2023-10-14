@@ -7,12 +7,11 @@ class DarkModeButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selections = ref.watch(selectionsProvider);
-    final bool dark = selections.isDark;
-    // print(dark);
+    bool dark = false;
     return IconButton(
       onPressed: () {
-        ref.read(selectionsProvider.notifier).toggleMode();
+        // Todo : set dark mode
+        dark = !dark;
       },
       icon: AnimatedSwitcher(
         duration: const Duration(milliseconds: 300),
@@ -26,7 +25,7 @@ class DarkModeButton extends ConsumerWidget {
           );
         },
         child: Icon(
-          dark ? Icons.dark_mode_outlined : Icons.dark_mode,
+          dark  ? Icons.dark_mode_outlined : Icons.dark_mode,
           key: ValueKey(dark),
         ),
       ),
