@@ -22,22 +22,23 @@ class ChaperScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(12),
         child: ListView(
           children: [
-            ...selectionsInfo.books.map((e) => Column(
-                  children: [
-                    ListTile(
-                      leading: Text(e.id.toString()),
-                      title: Text("Chapter "+ e.id.toString()),
-                      onTap: () {
-                        ref.read(selectionsProvider.notifier).selectChapter(e.id);
-                        
-                        Navigator.of(context).push(
-                          MaterialPageRoute(builder: (ctx) => VerseScreen(),),
-                        );
-                      },
-                    ),
-                    Divider(height: 0),
-                  ],
-                ))
+            for (var i = 0; i < selectedBook.chapter_count; i++)
+              Column(
+                children: [
+                  ListTile(
+                    leading: Text((1 + i).toString()),
+                    title: Text("Chapter " + (1 + i).toString()),
+                    onTap: () {
+                      ref.read(selectionsProvider.notifier).selectChapter(i);
+                      
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => VerseScreen(),),
+                      );
+                    },
+                  ),
+                  const Divider(height: 0),
+                ],
+              ),
           ],
         ),
       ),

@@ -2,13 +2,13 @@ class Book {
   Book({
     required this.id,
     required this.name,
-    this.chapter_count
+    required this.chapter_count
   });
   
   int id;
   String name;
   
-  int? chapter_count;
+  int chapter_count;
   
   factory Book.fromJson(Map<String, dynamic> json) {
     return Book(

@@ -39,7 +39,7 @@ class BookScreenState extends ConsumerState<BookScreen> {
                         );
                       },
                     ),
-                    Divider(height: 0),
+                    const Divider(height: 0),
                   ],
                 ))
           ],
