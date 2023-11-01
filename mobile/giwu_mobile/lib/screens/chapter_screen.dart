@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:giwu_mobile/models/book.dart';
-import 'package:giwu_mobile/provider/selections_provider.dart';
+import 'package:giwu_mobile/provider/app_provider.dart';
 import 'package:giwu_mobile/screens/verse_screen.dart';
 
 class ChaperScreen extends ConsumerWidget {
   const ChaperScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectionsInfo = ref.read(selectionsProvider);
+    final selectionsInfo = ref.read(appDataProvider);
 
     int bookIndex = selectionsInfo.books.indexWhere((x) => x.id == selectionsInfo.book);
     Book selectedBook = selectionsInfo.books[bookIndex];
@@ -29,7 +29,7 @@ class ChaperScreen extends ConsumerWidget {
                     leading: Text((1 + i).toString()),
                     title: Text("Chapter " + (1 + i).toString()),
                     onTap: () {
-                      ref.read(selectionsProvider.notifier).selectChapter(i);
+                      ref.read(appDataProvider.notifier).selectChapter(i + 1);
                       
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (ctx) => VerseScreen(),),

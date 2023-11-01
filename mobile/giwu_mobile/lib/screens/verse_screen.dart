@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:giwu_mobile/models/book.dart';
-import 'package:giwu_mobile/provider/selections_provider.dart';
+import 'package:giwu_mobile/provider/app_provider.dart';
 
 class VerseScreen extends ConsumerStatefulWidget {
   const VerseScreen({super.key});
@@ -19,7 +19,7 @@ class _VerseScreenState extends ConsumerState<VerseScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final selectionsInfo = ref.watch(selectionsProvider);
+    final selectionsInfo = ref.watch(appDataProvider);
 
     int bookIndex =
         selectionsInfo.books.indexWhere((x) => x.id == selectionsInfo.book);

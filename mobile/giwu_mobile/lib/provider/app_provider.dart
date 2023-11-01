@@ -13,6 +13,15 @@ class AppDataNotificatifier extends StateNotifier<AppData> {
       : super(AppData(
         appError: null,
         host: "",
+        
+        bible: "t_kjv",
+        book: 1,
+        chapter: 1,
+
+        abbreviation:"KJV",
+        language:"english",
+        version:"King James Version",
+        books: [],
       ));
 
   void showAppError(AppError newError) {
@@ -93,5 +102,43 @@ class AppDataNotificatifier extends StateNotifier<AppData> {
     } catch (e) {
       return false;
     }
+  }
+  
+  void selectBible(String bible) {
+    state.bible = bible;
+  }
+
+  void selectBook(int book) {
+    state.book = book;
+  }
+
+  void selectChapter(int chapter) {
+    state.chapter = chapter;
+  }
+
+  String getBibleName() {
+
+    // var bibleIndex = bibleList.indexWhere((x) => x.table == state.bible);
+
+    // var bibleName = bibleList[bibleIndex].version;
+    // return bibleName;
+    return "bible";
+  }
+
+  String getBibleSlug() {
+
+    // var bibleIndex = bibleList.indexWhere((x) => x.table == state.bible);
+
+    // var bibleSlug = bibleList[bibleIndex].table;
+    // return bibleSlug;
+    return "bible";
+  }
+
+  String getBook(List<Book> bookList) {
+
+    var bookIndex = bookList.indexWhere((x) => x.id == state.book);
+
+    var bookName = bookList[bookIndex].name;
+    return bookName;
   }
 }
