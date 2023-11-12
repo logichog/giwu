@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:giwu_mobile/models/BibleVersionKey.dart';
 import 'package:giwu_mobile/models/KeyEnglish.dart';
 import 'package:giwu_mobile/models/verse.dart';
 import 'package:sqflite/sqflite.dart';
@@ -54,47 +55,35 @@ class BibleDataBaseHelper {
   }
 
   /// get all the books from english Bible
-  Future<List<KeyEnglish>> getAllBibles() async {
+  Future<List<BibleVersionKey>> getAllBibles() async {
     if (_db == null) {
       throw "bd is not initiated, initiate using [init(db)] function";
     }
 
-    final data = await _db.query('key_english');
-    final dbbooks = data
-        .map(
-          (row) => KeyEnglish(
-            id: row['b'] as int,
-            name: row['n'] as String,
-            testament: row['t'] != null ? row['t'] as String : "",
-            genreId: row['g'] != null ? row['g'] as int : 0,
-          ),
-        )
-        .toList();
+    final data = await _db.query('bible_version_key');
 
-    return dbbooks;
+    if (data.length > 0) {
+
+      return data
+          .map(
+            (row) => BibleVersionKey(
+              id: row['id'] as int,
+              table: row['table'] as String,
+              abbreviation: row['abbreviation'] as String,
+              language: row['language'] as String,
+              version: row['version'] as String,
+              infoText: row['info_text'] as String,
+              infoUrl: row['info_url'] as String,
+              publisher: row['publisher'] as String,
+              copyright: row['copyright'] as String,
+              copyrightInfo: row['copyright_info'] as String,
+            ),
+          )
+          .toList();
+    }
+
+    return [];
   }
-
-  /// get verses from chapter
-  // Future<List<Verse>> getChapter(String bible, int book, int chapter) async {
-  //   if (_db == null) {
-  //     throw "bd is not initiated, initiate using [init(db)] function";
-  //   }
-
-  //   final data = await _db.query(bible);
-
-  //   final dbbooks = data.map(
-  //         (row) => Verse(
-  //           id: row['id'] as int,
-  //           book: row['b'] as int,
-  //           chapter: row['c'] as int,
-  //           verse: row['v'] as int,
-  //           text: row['t'] != null ? row['t'] as String : "",
-  //         ),
-  //       )
-  //       .toList();
-
-  //   return dbbooks;
-  // }
 
   Future<List<Verse>> getChapter(String bible, int book, int chapter) async {
     if (_db == null) {

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/widgets.dart';
 import 'package:giwu_mobile/functions/database_helper.dart';
+import 'package:giwu_mobile/models/BibleVersionKey.dart';
 import 'package:giwu_mobile/models/verse.dart';
 import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart' as sql;
@@ -372,8 +373,11 @@ class AppDataNotificatifier extends StateNotifier<AppData> {
     return state.books;
   }
 
-  void selectBible(String bible) {
-    state.bible = bible;
+  void selectBible(BibleVersionKey bible) {
+    state.bible = bible.table;
+    state.abbreviation = bible.abbreviation;
+    state.language = bible.language;
+    state.version = bible.version;
   }
 
   void selectBook(int book) {
@@ -410,6 +414,16 @@ class AppDataNotificatifier extends StateNotifier<AppData> {
     if(verses != null && verses.isNotEmpty){
       return verses;
     }
-    return verses;
+    return [];
+  }
+
+  Future<List<BibleVersionKey>> getBibles() async {
+    final bibleDataBaseHelper = BibleDataBaseHelper();
+    await bibleDataBaseHelper.init();
+    List<BibleVersionKey> bibles = await bibleDataBaseHelper.getAllBibles();
+    if(bibles != null && bibles.isNotEmpty){
+      return bibles;
+    }
+    return [];
   }
 }

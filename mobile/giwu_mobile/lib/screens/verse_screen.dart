@@ -107,20 +107,3 @@ class _VerseScreenState extends ConsumerState<VerseScreen>
     );
   }
 }
-//  ListView.builder(
-//         padding: const EdgeInsets.fromLTRB(12, 12, 12, 70),
-//         children: [
-//           ..._verseList.map(
-//               (e) => Column(
-//                 children: [
-//                   ListTile(
-//                     leading: Text(e.verse.toString()),
-//                     title: Text(e.text),
-//                   ),
-//                   const Divider(height: 0),
-//                 ],
-//               ),
-//             ),
-//         ],
-//       ),
-//     )
