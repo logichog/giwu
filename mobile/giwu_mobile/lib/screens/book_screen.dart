@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:giwu_mobile/functions/database_helper.dart';
+import 'package:giwu_mobile/models/KeyEnglish.dart';
+import 'package:giwu_mobile/models/KeyEnglish.dart';
 import 'package:giwu_mobile/provider/app_provider.dart';
 
 import 'package:giwu_mobile/screens/chapter_screen.dart';
@@ -13,17 +16,29 @@ class BookScreen extends ConsumerStatefulWidget {
 }
 
 class BookScreenState extends ConsumerState<BookScreen> {
+
+  _initBooks() async{
+    // bookList = await ref.read(appDataProvider.notifier).getallBooks();
+    final bibleDataBaseHelper = await BibleDataBaseHelper();
+    await bibleDataBaseHelper.init();
+    // bookList = await bibleDataBaseHelper.getAllTheBookFromTheBoble();
+  }
+
   @override
   Widget build(BuildContext context) {
+    
     final selectionsInfo = ref.watch(appDataProvider);
+    if (selectionsInfo.books.isEmpty) {
+      _initBooks();
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text('Bible - ${selectionsInfo.version}'),
       ),
       body: Container(
         width: double.infinity,
-        padding: const EdgeInsets.all(12),
         child: ListView(
+          padding: const EdgeInsets.fromLTRB(12, 12, 12, 70),
           children: [
             ...selectionsInfo.books.map((e) => Column(
                   children: [
@@ -41,7 +56,7 @@ class BookScreenState extends ConsumerState<BookScreen> {
                     ),
                     const Divider(height: 0),
                   ],
-                ))
+                )),
           ],
         ),
       ),

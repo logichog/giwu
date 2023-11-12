@@ -1,4 +1,4 @@
-import 'package:giwu_mobile/models/book.dart';
+import 'package:giwu_mobile/models/KeyEnglish.dart';
 
 class Selections {
   Selections({
@@ -19,5 +19,5 @@ class Selections {
   String abbreviation;
   String language;
   String version;
-  List<Book> books;
+  List<KeyEnglish> books;
 }

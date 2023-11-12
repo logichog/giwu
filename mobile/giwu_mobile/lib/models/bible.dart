@@ -1,4 +1,4 @@
-import 'package:giwu_mobile/models/book.dart';
+import 'package:giwu_mobile/models/KeyEnglish.dart';
 
 class Bible {
   Bible({
@@ -24,7 +24,7 @@ class Bible {
   String copyrightInfo;
   
 
-  factory Bible.fromJson(Map<String, dynamic> json, List<Book> bookList) {
+  factory Bible.fromJson(Map<String, dynamic> json, List<KeyEnglish> bookList) {
     
     return Bible(
       table: json['table'],

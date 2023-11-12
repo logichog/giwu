@@ -1,5 +1,5 @@
 import 'package:giwu_mobile/models/appError.dart';
-import 'package:giwu_mobile/models/book.dart';
+import 'package:giwu_mobile/models/KeyEnglish.dart';
 
 class AppData {
   AppData({
@@ -25,5 +25,5 @@ class AppData {
   String abbreviation;
   String language;
   String version;
-  List<Book> books;
+  List<KeyEnglish> books;
 }
